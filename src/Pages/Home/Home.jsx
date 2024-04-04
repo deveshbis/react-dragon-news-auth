@@ -12,7 +12,6 @@ const Home = () => {
             <BreakingNews></BreakingNews>
             <Navbar></Navbar>
             
-
             <div className="grid grid-cols-4 gap-6">
                 <div className="border">
                     <LeftSide></LeftSide>
