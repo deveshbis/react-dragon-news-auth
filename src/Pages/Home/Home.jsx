@@ -14,13 +14,13 @@ const Home = () => {
             
 
             <div className="grid grid-cols-4 gap-6">
-                <div>
+                <div className="border">
                     <LeftSide></LeftSide>
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 border">
                     <h1 className="text-4xl">News comming soon...</h1>
                 </div>
-                <div>
+                <div className="border">
                     <RightSide></RightSide>
                 </div>
             </div>
