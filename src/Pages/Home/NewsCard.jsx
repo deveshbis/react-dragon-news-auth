@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const NewsCard = ({ news }) => {
 
-    const { image_url, title, details, author, rating, total_view } = news;
+    const { image_url, title, details, author, rating, total_view, _id } = news;
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
             <div className="flex justify-between space-x-4 bg-gray-200 p-2" >
@@ -33,7 +33,9 @@ const NewsCard = ({ news }) => {
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>
                 <img src={image_url} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
                 {
-                    details.length > 200 ? <p className="text-sm dark:text-gray-600" >{details.slice(0,200)}... <br /> <Link className="text-orange-500 font-bold"> Read More</Link> </p>
+                    details.length > 200 ? <p className="text-sm dark:text-gray-600" >{details.slice(0,200)}... <br /> <Link
+                    to = {`/news/${_id}`}
+                    className="text-orange-500 font-bold"> Read More</Link> </p>
                     : <p className="text-sm dark:text-gray-600">{details}</p>
                 }
             </div>
@@ -62,6 +64,7 @@ const NewsCard = ({ news }) => {
 
 NewsCard.propTypes = {
     news: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
         image_url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         details: PropTypes.string.isRequired,
